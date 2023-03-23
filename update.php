@@ -2,9 +2,11 @@
 require("connection.php");
 
 try {
+    
     $pdo = connection();
 
     $id = $_GET['id'];
+    
     // Preparamos la sentencia, buscando el usuario por su ID, recibida por GET
     $stmt = $pdo->prepare("SELECT * FROM users WHERE id=:id");
     $stmt->bindParam(':id', $id);
@@ -12,13 +14,18 @@ try {
 
     // Almacenamos los resultados de la consulta en $row, para mostrarlos en el formulario
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    
 } catch (PDOException $e) {
+    
     // manejo de excepción
     echo "Error: " . $e->getMessage();
     die();
+    
 } finally {
+    
     // cerrar la conexión
     $pdo = null;
+    
 }
 ?>
 <!DOCTYPE html>

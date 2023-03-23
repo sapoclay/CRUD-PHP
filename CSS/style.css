@@ -1,1 +1,258 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+html {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.users-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 30%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.users-form form input{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.users-form form input[type=text],
+.users-form form input[type=password],
+.users-form form input[type=email]{
+    padding: 8px;
+    border:2px solid #aaa;
+    border-radius:4px;
+    outline:none;
+    transition:.3s;
+}
+
+.users-form form input[type=text]:focus,
+.users-form form input[type=password]:focus,
+.users-form form input[type=password]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 6px 0 dodgerBlue;
+}
+
+.back-btn, .users-form form input[type=submit]{
+    border: none;
+    padding: 12px 50px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ff4d4d;
+    font-size: .95em;
+}
+
+.back-btn:hover, .users-form form input[type=submit]:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+table th{
+    padding: 16px;
+    text-align: center;
+    font-size: .85em;
+}
+
+table { 
+    width: 750px; 
+    border-collapse: collapse; 
+    margin:50px auto;
+    }
+
+/* linea superior de cabeceras */
+tr:nth-of-type(odd) { 
+    background: #eee; 
+    }
+
+th { 
+    background: #ff4d4d; 
+    color: white; 
+    font-weight: bold; 
+    }
+
+td, th { 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+    font-size: 18px;
+    }
+
+/*Enlace opciones*/
+.users-table--edit{
+    background: #009688;
+    padding: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+.users-table--delete{
+    background: #b11e1e;
+    padding: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+.users-table--delete:hover{
+    color:#000000;
+    background: #a56666;
+}
+.users-table--edit:hover{
+    color: #000000;
+    background: #598d88;
+}
+
+/* Estilo para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(60, 60, 60, 0.89);
+  }
+  
+  /* Estilo para el botón de abrir la ventana modal */
+.metro-button{
+    background-color: #0080c6; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Padding */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+  }
+  
+  /* Estilo para el botón de cerrar la ventana modal */
+  .metro-button .close-button {
+    background-color: white; /* Color de fondo */
+    color: #0080c6; /* Color del texto */
+    font-size: 20px; /* Tamaño de fuente */
+    line-height: 1; /* Altura de línea */
+    padding: 5px 10px; /* Padding */
+    border-radius: 50%; /* Bordes redondeados */
+    border: 2px solid #0080c6; /* Borde sólido */
+    margin: -20px -20px 0 0; /* Margen */
+    float: right; /* Flotar a la derecha */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+  }
+/* Título */
+.titulo {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    font: normal 38px / normal "Warnes", Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: normal;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 0 0 10px rgb(255, 0, 0), 0 0 20px rgba(255, 0, 0),
+      0 0 30px rgba(255, 0, 0), 0 0 40px #727272, 0 0 70px #727272,
+      0 0 80px #4e4e4e, 0 0 100px #2b2b2b;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+    width: 100%;
+    margin-top: 10px;
+  }
+  .titulo:hover {
+    text-shadow: 0 0 10px rgb(27, 27, 27), 0 0 20px rgba(27, 27, 27),
+      0 0 30px rgba(27, 27, 27), 0 0 40px #000000, 0 0 70px #000000,
+      0 0 80px #000000, 0 0 100px #000000;
+  }
+  /*Footer*/
+  .wrapper {
+    position: relative;
+    min-height: 100vh;
+  }
+  footer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2%;
+  }
+/* 
+Ancho máximo de esta tabla EN PARTICULAR.
+Esta consulta surtirá efecto para cualquier pantalla de menos de 760px.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    table { 
+          width: 100%; 
+    }
+
+    /* Forzar la tabla para que ya no sea como en pantalla completa */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Ocultar encabezados de tabla (no se usa display: none; por lo de la accesibilidad) */
+    thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #000000; }
+    
+    td { 
+        /* Comportarse como una "fila" */
+        border: none;
+        border-bottom: 1px solid #c6c6c6; 
+        position: relative;
+        padding-left: 50%; 
+    }
+
+    td:before { 
+        /* Ahora como un encabezado de tabla */
+        position: absolute;
+        left: 10px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        /* Etiquetar los datos con el valor de data-column*/
+        content: attr(data-column)": ";
+        color: #000;
+        font-weight: bold;
+    }
+
+}

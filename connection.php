@@ -3,7 +3,7 @@
 function connection()
 {
     $host = "localhost";
-    $user = "root";
+    $user = "TU-USUARIO";
     $pass = "XXXXX";
     $db = "crud-php";
 

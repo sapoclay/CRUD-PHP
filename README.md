@@ -10,4 +10,3 @@ Dejaré el script de MySQL
 
 Sientete libre de descargar el código y modificarlo a tu antojo.
 
-# CRUD-PHP

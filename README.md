@@ -10,3 +10,4 @@ El script .SQL necesario para crear la base de datos con la que trabaja este eje
 
 Sientete libre de descargar el código y modificarlo a tu antojo.
 
+![tabla-responsive](https://user-images.githubusercontent.com/6242827/227259695-0f88d71d-f98e-430a-a25c-648fcdbf2e63.png)

@@ -2,6 +2,7 @@
 require("connection.php");
 
 try {
+    
     $con = connection();
 
     $id = $_POST["id"];
@@ -13,7 +14,9 @@ try {
 
     // Comprobamos si $email tiene un formato de email válido
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        
         throw new Exception('La dirección de correo electrónico no es válida');
+        
     }
 
     $sql = "UPDATE users SET name=?, lastname=?, username=?, password=?, email=? WHERE id=?";
@@ -21,16 +24,27 @@ try {
     $values = array($name, $lastname, $username, $password, $email, $id);
 
     if ($query->execute($values)) {
+        
         Header("Location: index.php");
+        
     } else {
+        
         echo "ERROR AL EDITAR EL USUARIO";
+        
     }
+    
 } catch (PDOException $e) {
+    
     echo "SE HA PRODUCIDO UN ERROR AL EDITAR EL USUARIO";
     die();
+    
 } catch (Exception $e) {
+    
     echo "Error: " . $e->getMessage();
     die();
+    
 } finally {
+    
     $con = null; // Cerrar la conexión
+    
 }

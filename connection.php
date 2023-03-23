@@ -4,7 +4,7 @@ function connection()
 {
     $host = "localhost";
     $user = "root";
-    $pass = "36159152";
+    $pass = "XXXXX";
     $db = "crud-php";
 
     // Crea una nueva instancia de PDO

@@ -3,6 +3,7 @@
 require_once "connection.php";
 
 try {
+    
     $pdo = connection();
 
     $sql = "SELECT * FROM users"; // Buscamos todos los usuarios de la base de datos
@@ -13,10 +14,13 @@ try {
 
     // Cerramos la conexión
     $pdo = null;
+    
 } catch (PDOException $e) {
+    
     // Manejo de errores
     echo "Error: " . $e->getMessage();
     die();
+    
 }
 ?>
 

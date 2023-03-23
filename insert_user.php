@@ -2,7 +2,9 @@
 require("connection.php");
 
 try {
+    
     $pdo = connection();
+    
     // Limpiamos las cosas que llegan por $_POST
     $name = filter_var($_POST['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -12,7 +14,9 @@ try {
 
     // Comprobamos si $email tiene un formato de email válido
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        
         throw new Exception('La dirección de correo electrónico no es válida');
+        
     }
 
     // Preparamos al sentencia
@@ -27,12 +31,18 @@ try {
 
     header("Location: index.php");
 } catch (PDOException $e) {
+    
     echo "Error: " . $e->getMessage();
     die();
+    
 } catch (Exception $e) {
+    
     echo "Error: " . $e->getMessage();
     die();
+    
 } finally {
+    
     $pdo = null;
+    
 }
 ?>

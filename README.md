@@ -6,7 +6,7 @@ Este es un CRUD que creé con PHP (PDO), MySQL, CSS y algo de JavaScript. Todo p
 
 ## MySQL
 
-Dejaré el script de MySQL 
+El script .SQL necesario para crear la base de datos con la que trabaja este ejemplo, est
 
 Sientete libre de descargar el código y modificarlo a tu antojo.
 
